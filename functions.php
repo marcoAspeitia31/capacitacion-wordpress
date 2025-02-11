@@ -7,9 +7,9 @@
  * @package Capacitacion_Wordpress
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'CAPACITATION_WORDPRESS_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'CAPACITATION_WORDPRESS_VERSION', '1.0.0' );
 }
 
 /**
@@ -138,10 +138,20 @@ add_action( 'widgets_init', 'capacitacion_wordpress_widgets_init' );
  * Enqueue scripts and styles.
  */
 function capacitacion_wordpress_scripts() {
-	wp_enqueue_style( 'capacitacion-wordpress-style', get_stylesheet_uri(), array(), _S_VERSION );
+	/**
+	 * Agregar hojas de estilos personalizadas inicio
+	 */
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '5.0.2' );
+	/**
+	 * Fin de agregar hojas de estilos personalizadas
+	 */
+	wp_enqueue_style( 'capacitacion-wordpress-style', get_stylesheet_uri(), array(), CAPACITATION_WORDPRESS_VERSION );
 	wp_style_add_data( 'capacitacion-wordpress-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'capacitacion-wordpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	// Inicio de alta de hojas de js personalizadas
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), '5.0.2', true );
+	// Fin de alta de hojas de js personalizadas
+	wp_enqueue_script( 'capacitacion-wordpress-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CAPACITATION_WORDPRESS_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

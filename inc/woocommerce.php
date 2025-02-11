@@ -43,7 +43,7 @@ add_action( 'after_setup_theme', 'capacitacion_wordpress_woocommerce_setup' );
  * @return void
  */
 function capacitacion_wordpress_woocommerce_scripts() {
-	wp_enqueue_style( 'capacitacion-wordpress-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), _S_VERSION );
+	wp_enqueue_style( 'capacitacion-wordpress-woocommerce-style', get_template_directory_uri() . '/woocommerce.css', array(), CAPACITATION_WORDPRESS_VERSION );
 
 	$font_path   = WC()->plugin_url() . '/assets/fonts/';
 	$inline_font = '@font-face {
