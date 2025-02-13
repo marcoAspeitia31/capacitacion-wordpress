@@ -49,7 +49,9 @@ function capacitacion_wordpress_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'capacitacion-wordpress' ),
+			'primary-header-menu' => esc_html__( 'Primary Header', 'capacitacion-wordpress' ),
+			'menu-2' => esc_html__( 'Category Footer Menu', 'capacitacion-wordpress' ),
+			'menu-3' => esc_html__( 'Quick Links Footer Menu', 'capacitacion-wordpress' ),
 		)
 	);
 
@@ -142,6 +144,15 @@ function capacitacion_wordpress_scripts() {
 	 * Agregar hojas de estilos personalizadas inicio
 	 */
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '5.0.2' );
+	wp_enqueue_style( 'all', get_template_directory_uri() . '/assets/css/all.min.css', array(), '5.0.2' );
+	wp_enqueue_style( 'rounded', get_template_directory_uri() . '/assets/css/rounded.css', array(), '5.0.2' );
+	wp_enqueue_style( 'back-menus', get_template_directory_uri() . '/assets/css/back-menus.css', array(), '5.0.2' );
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.css', array(), '5.0.2' );
+	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), '5.0.2' );
+	wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/assets/css/magnific-popup.css', array(), '5.0.2' );
+	wp_enqueue_style( 'style-neon-theme', get_template_directory_uri() . '/assets/css/style.css', array(), '5.0.2' );
+	wp_enqueue_style( 'back-spacing', get_template_directory_uri() . '/assets/css/back-spacing.css', array(), '5.0.2' );
+	wp_enqueue_style( 'responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), '5.0.2' );
 	/**
 	 * Fin de agregar hojas de estilos personalizadas
 	 */
